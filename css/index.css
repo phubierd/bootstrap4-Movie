@@ -1,0 +1,421 @@
+/* GLOBAL */
+html,body{
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+/* HEADER */
+header{
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+/* .navbar navbar-expand-lg navbar-light navbar-toggler{
+    background:#ec7532 ;
+} */
+#movieNavbar .navbar-nav{
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+#movieNavbar .nav-link{
+    padding: 0 15px;
+}
+#movieNavbar .nav-item ::after{
+    content: '';
+    
+    /* chưa hover */
+    width: 0;
+    height: 3px;
+    display: block;
+
+    /* gôm nhiều màu vô , hướng trải từ trái qua phải, màu bắt đầu, màu kết thúc */
+    background:linear-gradient(to right,#fbbd61,#ec7532);
+    transition: 0.5s;
+
+}
+#movieNavbar .nav-item:hover ::after{
+    width: 100%;
+}
+
+#movieNavbar .nav-item.active ::after{
+    width: 100%;
+}
+
+/* movieCarousel */
+#carouselMovie .carousel-caption{
+    /* cách căn giữa thẻ có position absolute */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.carousel-caption span{
+    color: #fbbd61;
+    font-size: 14px;
+    letter-spacing: 2px;
+}
+.carousel-caption h2{
+    font-size: 52px;
+}
+.carousel-caption p{
+    font-size: 18px;
+    padding-right: 20%;
+}
+.carousel-item__trailer span{
+    display: inline-block;
+    color: white;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border: 2px solid white;
+    border-radius: 50%;
+}
+.carousel-item__trailer button{
+    background: linear-gradient(to right,#fbbd61,#ec7532);
+    border-radius: 30px;
+    font-size: 14px;
+    letter-spacing: 2px;
+    padding: 11px 30px;
+    cursor: pointer;
+}
+.carousel-item__button{
+    position: relative;
+    overflow: hidden;
+}
+.carousel-item__orange{
+    position: absolute;
+    top: 0;
+    left: -250%;
+    width: 200px;
+    height: 100%;
+    background-color: #ec7532;
+    /* transform: skewX(90deg) skewY(20deg); */
+    transform: skewX(50deg);
+    opacity: 0.5;
+    transition: 0.5s;
+}
+.carousel-item__button:hover .carousel-item__orange{
+    /* transform: skewX(30deg) skewY(20deg); */
+    left:-10%;
+}
+
+
+#carouselMovie .carousel-indicators li {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 2px solid white;
+    background: transparent;
+   
+}
+#carouselMovie .carousel-indicators li.active {
+    background: white;
+}
+/* #carouselMovie .carousel-indicators{
+    left:-80%;
+} */
+
+
+
+
+
+/* newIN */
+.newIn__img{
+    position: relative;
+    /* che tất cả các thứ ra ngoài khỏi cha */
+    overflow: hidden;
+    border-radius: 20px;
+}
+.newIn__orange{
+    position: absolute;
+    top: 0%;
+    left: 0;
+    width: 200%;
+    height: 100%;
+    background: linear-gradient(to bottom, #fbbd61,#ec7532);
+    opacity: 0.8;
+    /* chua hover */
+    transform: skewX(30deg) translatex(-130%);
+    transition: 0.5s;
+}
+/* đã hover */
+/* transform: skewX(30deg) translatex(-30%); */
+.newIn__img:hover .newIn__orange{
+    transform: skewX(30deg) translatex(-30%);
+}
+
+
+.newIn h2{
+    color: #fbbd61;
+    border-bottom: 1px solid #d8d8d8;
+}
+.newIn h2::after{
+    content: '';
+    display: block;
+    width: 150px;
+    height: 3px;
+    background:linear-gradient(to right,#fbbd61,#ec7532);
+}
+
+.newIn__play {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 20%;
+    left: 0;
+    opacity: 0;
+    transform: scale(0.8);
+    transition: 0.5s;
+}
+.newIn__play:hover{
+    opacity: 1;
+    transform: scale(1);
+}
+.newIn__play h4{
+    letter-spacing: 2px;
+}
+.newIn__play i {
+    height: 60px;
+    width: 60px;
+    border: 2px solid white;
+    border-radius: 50%;
+    line-height: 55px;
+    font-size: 20px;
+    transition: 0.5s;
+}
+.newIn__play i:hover{
+    transform: scale(0.9);
+}
+
+.newIn__name p{
+    font-size: 18px;
+}
+
+
+
+/* SHOWTIMES */
+
+
+/* chỉnh phần ngày chiếu */
+
+.showTimes .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active,.showTimes .nav-tabs .nav-link:hover {
+    border: white;
+}
+.showTimes .nav-tabs .nav-link{
+    position: relative;
+    color: #4a4a4a;
+}
+/* chỉnh đường gạch chân của thẻ a */
+
+.showTimes .nav-tabs .nav-link::after {
+    content: '';
+    display: block;
+    width: 0%;
+    height: 3px;
+    background: linear-gradient(to right,#fbbd61,#ec7532);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: all 0.5s;
+}
+/* khi hover vào */
+.showTimes .nav-tabs .nav-link:hover::after{
+    width: 100%;
+}
+.showTimes .nav-tabs .nav-link.active::after{
+    width: 100%;
+}
+
+
+
+
+/* chỉnh phần suất chiếu */
+
+#myTabContent img{
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+}
+.showTimes__text span{
+    color: #ec7532;
+    letter-spacing: 3px;
+}
+.showTimes__text h3{
+    color: #4a4a4a;
+}
+.showTimes__text p{
+    color: #4a4a4a;
+}
+.showTimes__text a{
+    color: #ec7532;
+    letter-spacing: 3px;
+}
+.showTimes__detail span{
+    color: #4a4a4a;
+    letter-spacing: 0px;
+}
+
+
+/* chỉnh vòng tròn phía góc dưới phải */
+
+.showTimes__time :last-child{
+    height: 40px;
+    width: 40px;
+    border: 2px solid #4a4a4a;
+    border-radius: 50%;
+    color: white;
+    background-color: #4a4a4a;
+    display: inline-block;
+    line-height: 35px;
+    text-align: center;
+    font-size: 15px;
+}
+
+.showTimes__detail button{
+    color: black;
+    background-color: #d8d8d8;
+    border:white;
+}
+
+/* chỉnh mờ nút disable */
+.showTimes__detail .btn-secondary.disabled, .btn-secondary:disabled{
+    opacity: 0.5;
+}
+
+/* ComingSoon */
+.comingSoon {
+    background-color: #101010;;
+}
+ .comingSoon h2{
+    border-bottom: 1px solid #4a4a4a;
+    padding: 0;
+}
+.comingSoon h2::after{
+    content: '';
+    display:block;
+    width: 20%;
+    height: 3px;
+    background: linear-gradient(to right,#fbbd61,#ec7532);
+}
+
+.comingSoon__left h3{
+    color: #ec7532;
+    font-size: 15px;
+    letter-spacing: 3px;
+}
+.comingSoon__left a{
+    color: #ec7532;
+    letter-spacing: 3px;
+}
+
+
+
+
+
+
+.comingSoon_right img{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    cursor: pointer;
+}
+.comingSoon_right i {
+    height: 60px;
+    width: 60px;
+    border: 2px solid #ec7532;
+    border-radius: 50%;
+    line-height: 55px;
+    font-size: 20px;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    transform: scale(1);
+    transition: 0.5s;
+
+}
+.comingSoon_right i:hover  {
+    transform: scale(0.9);
+}
+
+.comingSoon_item1{
+    background: url(../images/slide-1.png)no-repeat center center;
+    background-size: cover;
+}
+.comingSoon_item2{
+    background: url(../images/slide-3.png)no-repeat center center;
+    background-size: cover;
+}
+.comingSoon_item3{
+    background: url(../images/slide-3.png)no-repeat center center;
+    background-size: cover;
+}
+
+
+
+
+/* MovieList */
+.movieList{
+    background-color: black;
+    height: 350px;
+}
+.movieList__content{
+    width: 80%;
+    margin: auto;
+}
+.movieList__content h2{
+    font-size: 17px;
+    color: #4a4a4a;
+}
+.movieList__content p{
+    font-size: 14px;
+}
+.movieList__content img{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+
+
+/* Contact */
+.contact span{
+    font-size: 23px ;
+    color: #4a4a4a;
+}
+.contact p{
+    font-size: 46px;
+    color: #ec7532;
+}
+
+
+
+/* Footer */
+.footer{
+    background-color: black;
+}
+footer h1{
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: #ec7532;
+}
+footer ul{
+    padding: 0;
+}
+footer li{
+    list-style: none;
+}
+footer a{
+    color: #ffffff;
+    text-decoration: none;
+}
+footer a:hover{
+    color: #fbbd61;
+    text-decoration: none
+}
+.footer__bottom p{
+    color: #ffffff;
+    padding-top: 20px;
+    border-top: 2px solid #4a4a4a;
+    display: block;
+}
